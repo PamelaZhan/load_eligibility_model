@@ -1,27 +1,30 @@
-# credit_eligibility_application
+# real_estate_price_application
 This app has been built using Streamlit and deployed with Streamlit community cloud
 
 [Visit the app here](https://loan-application-app.streamlit.app/)
 
-password - streamlit
-
-This application predicts whether someone is eligible for a loan based on inputs derived from the German Credit Risk dataset. The model aims to help users assess loan eligibility by leveraging machine learning predictions.
+This application predicts the fair transaction price of a property before it's sold within a small county in New York state based on a dataset for transaction prices for previously sold properties on the market. The model aims to predict transaction prices with an average error of under $70,000.
 
 ## Features
 - User-friendly interface powered by Streamlit.
-- Input form to enter details such as credit history, loan amount, income, and other relevant factors.
-- Real-time prediction of loan eligibility based on the trained model.
+- Input form to enter details such as property_tax, insurance, beds, baths, Bunglow/Condo, and other relevant factors.
+- Real-time prediction of property price based on the trained model. Mean Absolute Error (MAE) < $70,000
 - Accessible via Streamlit Community Cloud.
 
 ## Dataset
-The application is trained on the **German Credit Risk dataset**, a widely used dataset for evaluating creditworthiness. It includes features like:
-- Age
-- Job
-- Housing status
-- Credit amount
-- Duration of credit
-- Purpose of loan
-- And other factors influencing credit risk.
+The application is trained on the **Real Estate dataset**, a dataset of transaction prices for previously sold properties on the market. It includes features like:
+- Year_sold
+- Property_tax
+- Insurance
+- Beds
+- Baths
+- Sqft
+- Year_built
+- Lot_size
+- Basement
+- Property_type
+- And other factors influencing price.
+
 
 ## Technologies Used
 - **Streamlit**: For building the web application.
@@ -30,32 +33,7 @@ The application is trained on the **German Credit Risk dataset**, a widely used 
 - **Matplotlib** and **Seaborn**: For exploratory data analysis and visualization (if applicable).
 
 ## Model
-The predictive model is trained using the German Credit Risk dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The classification model used may include algorithms such as Logistic Regression, Random Forest, or XGBoost.
+The predictive model is trained using the real estate dataset. It applies preprocessing steps like adding domain features and encoding categorical variables. The Decision Tree regression model is used.
 
-## Future Enhancements
-* Adding support for multiple datasets.
-* Incorporating explainability tools like SHAP to provide insights into predictions.
-* Adding visualizations to better represent user input and model predictions.
 
-## Installation (for local deployment)
-If you want to run the application locally, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/credit_eligibility_application.git
-   cd credit_eligibility_application
-
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv env
-   source env/bin/activate  # On Windows, use `env\\Scripts\\activate`
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-
-4. Run the Streamlit application:
-   ```bash
-   streamlit run app.py
-
-#### Thank you for using the Credit Eligibility Application! Feel free to share your feedback.
+#### Thank you for using the Real Estate Price Application! Feel free to share your feedback.
