@@ -17,15 +17,16 @@ if __name__ == "__main__":
     # Train the dicision tree regression model
     model, x_test, y_test = train_DTmodel(x, y)
 
-    # Plot
-    plot_correlation_heatmap(pd.merge(y,x, left_index=True, right_index=True))
-    plot_feature_importance(model, x)
-    plot_decision_tree(model)
+
 
     # Evaluate the model
     mae = evaluate_model(model, x_test, y_test)    
     if mae<70000:
         print(f"Successful! The mean absolute error is {mae}. The model achieved the goal: error under 70000.")
+        # Plot
+        plot_correlation_heatmap(pd.merge(y,x, left_index=True, right_index=True))
+        plot_feature_importance(model, x)
+        plot_decision_tree(model)
     else:
         print(f"The mean absolute error is over 70000. It is not fit.")
 
