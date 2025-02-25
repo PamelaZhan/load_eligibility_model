@@ -8,7 +8,7 @@ This application predicts whether someone is eligible for a loan based on inputs
 ## Features
 - User-friendly interface powered by Streamlit.
 - Input form to enter details such as credit history, loan amount, income, and other relevant factors.
-- Real-time prediction of property price based on the trained model. Mean Absolute Error (MAE) < $70,000
+- Real-time prediction of load eligibility, Accuracy of 76% and above.
 - Accessible via Streamlit Community Cloud.
 
 ## Dataset
