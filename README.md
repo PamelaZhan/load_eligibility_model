@@ -1,7 +1,7 @@
 # real_estate_price_application
 This app has been built using Streamlit and deployed with Streamlit community cloud
 
-[Visit the app here](https://loan-application-app.streamlit.app/)
+[Visit the app here](https://real-estate-price-predictor-app.streamlit.app/)
 
 This application predicts the fair transaction price of a property before it's sold within a small county in New York state based on a dataset for transaction prices for previously sold properties on the market. The model aims to predict transaction prices with an average error of under $70,000.
 

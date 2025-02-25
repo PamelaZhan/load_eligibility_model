@@ -1,5 +1,7 @@
 import pandas as pd
+from ..logging.logging import logging_decorator
 
+@logging_decorator
 # create dummy features
 def create_indicator_dummy_vars(df):
     # 2 bedroom and 2 bathroom properties are especially popular for investors. Create indicator variable for properties with 2 beds and 2 baths

@@ -3,8 +3,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error
 import pickle
+from ..logging.logging import logging_decorator
 
-
+@logging_decorator
 # Function to train the model
 def train_DTmodel(x, y):
     # Splitting the data into training and testing sets

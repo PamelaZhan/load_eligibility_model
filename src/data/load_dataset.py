@@ -1,6 +1,8 @@
 
 import pandas as pd
+from ..logging.logging import logging_decorator
 
+@logging_decorator
 def load_and_preprocess_data(data_path):
     
     try:
