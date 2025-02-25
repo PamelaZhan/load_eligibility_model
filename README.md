@@ -3,27 +3,24 @@ This app has been built using Streamlit and deployed with Streamlit community cl
 
 [Visit the app here](https://real-estate-price-predictor-app.streamlit.app/)
 
-This application predicts the fair transaction price of a property before it's sold within a small county in New York state based on a dataset for transaction prices for previously sold properties on the market. The model aims to predict transaction prices with an average error of under $70,000.
+This application predicts whether someone is eligible for a loan based on inputs derived from the German Credit Risk dataset. The model aims to help users assess loan eligibility by leveraging machine learning predictions.
 
 ## Features
 - User-friendly interface powered by Streamlit.
-- Input form to enter details such as property_tax, insurance, beds, baths, Bunglow/Condo, and other relevant factors.
+- Input form to enter details such as credit history, loan amount, income, and other relevant factors.
 - Real-time prediction of property price based on the trained model. Mean Absolute Error (MAE) < $70,000
 - Accessible via Streamlit Community Cloud.
 
 ## Dataset
-The application is trained on the **Real Estate dataset**, a dataset of transaction prices for previously sold properties on the market. It includes features like:
-- Year_sold
-- Property_tax
-- Insurance
-- Beds
-- Baths
-- Sqft
-- Year_built
-- Lot_size
-- Basement
-- Property_type
-- And other factors influencing price.
+The application is trained on the **German Credit Risk dataset**, a dataset for evaluating creditworthiness. It includes features like:
+- Age
+- Job
+- Housing status
+- Credit amount
+- Duration of credit
+- Purpose of loan
+- And other factors influencing credit risk.
+
 
 
 ## Technologies Used
@@ -33,7 +30,7 @@ The application is trained on the **Real Estate dataset**, a dataset of transact
 - **Matplotlib** and **Seaborn**: For exploratory data analysis and visualization (if applicable).
 
 ## Model
-The predictive model is trained using the real estate dataset. It applies preprocessing steps like adding domain features and encoding categorical variables. The Decision Tree regression model is used.
+The predictive model is trained using the German Credit Risk dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The Logitic Regression model is used.
 
 
-#### Thank you for using the Real Estate Price Application! Feel free to share your feedback.
+#### Thank you for using the Load Eligibility Application! Feel free to share your feedback.
