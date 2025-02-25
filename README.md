@@ -1,7 +1,7 @@
-# real_estate_price_application
+# load_eligibility_application
 This app has been built using Streamlit and deployed with Streamlit community cloud
 
-[Visit the app here](https://real-estate-price-predictor-app.streamlit.app/)
+[Visit the app here](https://load-eligibility-model.streamlit.app/)
 
 This application predicts whether someone is eligible for a loan based on inputs derived from the German Credit Risk dataset. The model aims to help users assess loan eligibility by leveraging machine learning predictions.
 
@@ -12,13 +12,12 @@ This application predicts whether someone is eligible for a loan based on inputs
 - Accessible via Streamlit Community Cloud.
 
 ## Dataset
-The application is trained on the **German Credit Risk dataset**, a dataset for evaluating creditworthiness. It includes features like:
-- Age
-- Job
-- Housing status
-- Credit amount
-- Duration of credit
-- Purpose of loan
+The application is trained on the **German Credit data**, a dataset for evaluating creditworthiness. It includes features like:
+- Gender
+- Dependents
+- Education
+- Monthly Income
+- LoanAmount
 - And other factors influencing credit risk.
 
 
