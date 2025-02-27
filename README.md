@@ -29,7 +29,7 @@ The application is trained on the **German Credit data**, a dataset for evaluati
 - **Matplotlib** and **Seaborn**: For exploratory data analysis and visualization (if applicable).
 
 ## Model
-The predictive model is trained using the German Credit Risk dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The Logitic Regression model is used.
+The predictive model is trained using the German Credit Risk dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The Logistic Regression model is used.
 
 
 #### Thank you for using the Load Eligibility Application! Feel free to share your feedback.
