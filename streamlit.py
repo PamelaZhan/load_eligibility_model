@@ -15,6 +15,9 @@ based on various personal and financial characteristics.
 with open("models/LRmodel.pkl", "rb") as lr_pickle:
     lr_model = pickle.load(lr_pickle)
 
+# Load the pre-fit scaler 
+with open('models/scaler.pkl', 'rb') as f:
+    scaler=pickle.load(f)
 
 # Prepare the form to collect user inputs
 with st.form("user_inputs"):
@@ -105,8 +108,10 @@ if submitted:
         Property_Area_Rural, Property_Area_Semiurban, Property_Area_Urban
     ]]
 
+    # Scale the input
+    input_scaled = scaler.transform(prediction_input)
     # Make prediction
-    new_prediction = lr_model.predict(prediction_input)
+    new_prediction = lr_model.predict(input_scaled)
 
     # Display result
     st.subheader("Prediction Result:")

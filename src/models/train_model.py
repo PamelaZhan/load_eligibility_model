@@ -20,7 +20,11 @@ def train_LRmodel(x, y):
 
     # create an instance of the Logistic Regression and train it
     lrmodel = LogisticRegression().fit(x_train_scaled, y_train)
-       
+
+    # Save the scaler   
+    with open('models/scaler.pkl', 'wb') as f:
+        pickle.dump(scaler, f)
+        
     # Save the trained model
     with open('models/LRmodel.pkl', 'wb') as f:
         pickle.dump(lrmodel, f)
