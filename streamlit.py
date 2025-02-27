@@ -51,17 +51,17 @@ with st.form("user_inputs"):
                                          step=1000)
     
     # Loan Amount
-    LoanAmount = st.number_input("Loan Amount", 
+    LoanAmount = st.number_input("Loan Amount (*1000 dollars)", 
                                   min_value=0, 
-                                  step=1000)
+                                  step=1)
     
     # Loan Amount Term
     Loan_Amount_Term = st.selectbox("Loan Amount Term (Months)", 
                                     options=["360", "240", "180", "120", "60"])
     
     # Credit History
-    Credit_History = st.selectbox("Credit History", 
-                                  options=["1", "0"])
+    Credit_History = st.selectbox("Whether applicant has a Credit History", 
+                                  options=["Yes", "No"])
     
     # Property Area
     Property_Area = st.selectbox("Property Area", 
@@ -95,9 +95,11 @@ if submitted:
     Property_Area_Semiurban = 1 if Property_Area == "Semiurban" else 0
     Property_Area_Urban = 1 if Property_Area == "Urban" else 0
 
+    Credit_History = 1 if Credit_History == "Yes" else 0
+
     # Convert Loan Amount Term and Credit History to integers
     Loan_Amount_Term = int(Loan_Amount_Term)
-    Credit_History = int(Credit_History)
+
 
     # Prepare the input for prediction. This has to go in the same order as it was trained
     prediction_input = [[ApplicantIncome, CoapplicantIncome, LoanAmount,

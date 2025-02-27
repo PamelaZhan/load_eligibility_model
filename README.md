@@ -14,11 +14,16 @@ This application predicts whether someone is eligible for a loan based on inputs
 ## Dataset
 The application is trained on the **German Credit data**, a dataset for evaluating creditworthiness. It includes features like:
 - Gender
-- Dependents
-- Education
-- Monthly Income
-- LoanAmount
-- And other factors influencing credit risk.
+- Married: Marital status of the applicant
+- Dependents: Number of dependants the applicant has
+- Education: Graduate/Not Graduate
+- Self_Employed: Whether self-employed Yes/No
+- ApplicantIncome: Income of the applicant per month
+- CoapplicantIncome: Income of the co-applicant per month
+- LoanAmount: Loan amount requested in *1000 dollars
+- Loan_Amount_Term: Term of the loan in months
+- Credit_History: Whether applicant has a credit history
+
 
 
 
