@@ -22,49 +22,52 @@ with open('models/scaler.pkl', 'rb') as f:
 # Prepare the form to collect user inputs
 with st.form("user_inputs"):
     st.subheader("Loan Applicant Details")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Gender input
+        Gender = st.selectbox("Gender", options=["Male", "Female"])
+        
+        # Marital Status
+        Married = st.selectbox("Marital Status", options=["Yes", "No"])
+        
+        # Dependents
+        Dependents = st.selectbox("Number of Dependents", 
+                                options=["0", "1", "2", "3+"])
+        
+        # Education
+        Education = st.selectbox("Education Level", 
+                                options=["Graduate", "Not Graduate"])
+        
+        # Self Employment
+        Self_Employed = st.selectbox("Self Employed", options=["Yes", "No"])
     
-    # Gender input
-    Gender = st.selectbox("Gender", options=["Male", "Female"])
-    
-    # Marital Status
-    Married = st.selectbox("Marital Status", options=["Yes", "No"])
-    
-    # Dependents
-    Dependents = st.selectbox("Number of Dependents", 
-                               options=["0", "1", "2", "3+"])
-    
-    # Education
-    Education = st.selectbox("Education Level", 
-                              options=["Graduate", "Not Graduate"])
-    
-    # Self Employment
-    Self_Employed = st.selectbox("Self Employed", options=["Yes", "No"])
-    
-    # Applicant Income
-    ApplicantIncome = st.number_input("Applicant Monthly Income", 
-                                       min_value=0, 
-                                       step=1000)
-    
-    # Coapplicant Income
-    CoapplicantIncome = st.number_input("Coapplicant Monthly Income", 
-                                         min_value=0, 
-                                         step=1000)
-    
-    # Loan Amount
-    LoanAmount = st.number_input("Loan Amount (*1000 dollars)", 
-                                  min_value=0, 
-                                  step=1)
-    
-    # Loan Amount Term
-    Loan_Amount_Term = st.selectbox("Loan Amount Term (Months)", 
-                                    options=["360", "240", "180", "120", "60"])
-    
-    # Credit History
-    Credit_History = st.selectbox("Whether applicant has a Credit History", 
-                                  options=["Yes", "No"])
-    
-    # Property Area
-    Property_Area = st.selectbox("Property Area", 
+    with col2:
+        # Applicant Income
+        ApplicantIncome = st.number_input("Applicant Monthly Income", 
+                                        min_value=0, 
+                                        step=1000)
+        
+        # Coapplicant Income
+        CoapplicantIncome = st.number_input("Coapplicant Monthly Income", 
+                                            min_value=0, 
+                                            step=1000)
+        
+        # Loan Amount
+        LoanAmount = st.number_input("Loan Amount (*1000 dollars)", 
+                                    min_value=0, 
+                                    step=1)
+        
+        # Loan Amount Term
+        Loan_Amount_Term = st.selectbox("Loan Amount Term (Months)", 
+                                        options=["360", "240", "180", "120", "60"])
+        
+        # Credit History
+        Credit_History = st.selectbox("Whether applicant has a Credit History", 
+                                    options=["Yes", "No"])
+        
+        # Property Area
+        Property_Area = st.selectbox("Property Area", 
                                  options=["Urban", "Semiurban", "Rural"])
     
     # Submit button
@@ -123,6 +126,7 @@ if submitted:
         st.write("Sorry, you are not eligible for the loan.")
 
 st.write(
-    """We used a machine learning (Logistic Regression) model to predict your eligibility."""
+    "We used a machine learning (Logistic Regression) model to predict your eligibility."
 )
 
+st.image("confusion_matrix.png")
