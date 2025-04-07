@@ -14,7 +14,9 @@ def plot_correlation_heatmap(data):
     """
     plt.figure(figsize=(10, 8))
     sns.heatmap(data.corr()*100, annot=True, fmt='.0f', cmap='RdBu_r')
+    plt.xticks(rotation=70)
     plt.title('Correlation Heatmap', fontsize=16)
+    plt.tight_layout()
     # Save the plot to a file
     plt.savefig('heatmap.png', dpi=300)
     # Show the plot
@@ -35,7 +37,7 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion Matrix'
     if normalize:
         cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
 
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(6, 4))
     sns.heatmap(cm, annot=True, cmap='Blues', xticklabels=classes, yticklabels=classes)
     plt.xlabel('Predicted', fontsize=12)
     plt.ylabel('Actual', fontsize=12)
@@ -51,12 +53,13 @@ def plot_coefficients(model, x):
     # Get the values of the coefficients
     coefficients = model.coef_[0]
     # Plot the feature importances
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(10, 8))
     plt.title("Logistic Regression Coefficients")
     plt.bar(range(x.shape[1]), coefficients, align="center")
-    plt.xticks(range(x.shape[1]), x.columns, rotation=90)
+    plt.xticks(range(x.shape[1]), x.columns, rotation=70)
     plt.xlabel("Features")
     plt.ylabel("Coefficient Value")
+    plt.tight_layout()
     # Save the plot to a file
     plt.savefig('Coefficients.png', dpi=300)
     # show the plot

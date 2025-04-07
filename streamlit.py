@@ -187,6 +187,7 @@ if submitted:
 
 # display Coefficient image and values
 st.subheader("Feature Coefficient")
+st.write("A Logistic Regression model is used to predict the load eligibility. The coefficients shown below.")
 st.image("Coefficients.png")
 
 
