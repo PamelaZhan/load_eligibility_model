@@ -1,7 +1,6 @@
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn import tree
 import numpy as np
 from ..logging.logging import logging_decorator
 
@@ -44,4 +43,21 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion Matrix'
     # Save the plot to a file
     plt.savefig('confusion_matrix.png', dpi=300)
     # Show the plot
+    plt.show()
+
+@logging_decorator
+def plot_coefficients(model, x):
+    
+    # Get the values of the coefficients
+    coefficients = model.coef_[0]
+    # Plot the feature importances
+    plt.figure(figsize=(10, 6))
+    plt.title("Logistic Regression Coefficients")
+    plt.bar(range(x.shape[1]), coefficients, align="center")
+    plt.xticks(range(x.shape[1]), x.columns, rotation=90)
+    plt.xlabel("Features")
+    plt.ylabel("Coefficient Value")
+    # Save the plot to a file
+    plt.savefig('Coefficients.png', dpi=300)
+    # show the plot
     plt.show()

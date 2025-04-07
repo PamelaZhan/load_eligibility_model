@@ -3,7 +3,7 @@ This app has been built using Streamlit and deployed with Streamlit community cl
 
 [Visit the app here](https://load-eligibility-model.streamlit.app/)
 
-This application predicts whether someone is eligible for a loan based on inputs derived from the German Credit Risk dataset. The model aims to help users assess loan eligibility by leveraging machine learning predictions.
+This application predicts whether someone is eligible for a loan based on the German Credit Risk dataset. The model aims to help users assess loan eligibility by leveraging machine learning predictions.
 
 ## Features
 - User-friendly interface powered by Streamlit.
@@ -24,17 +24,15 @@ The application is trained on the **German Credit data**, a dataset for evaluati
 - Loan_Amount_Term: Term of the loan in months
 - Credit_History: Whether applicant has a credit history
 
-
-
-
 ## Technologies Used
 - **Streamlit**: For building the web application.
 - **Scikit-learn**: For model training and evaluation.
 - **Pandas** and **NumPy**: For data preprocessing and manipulation.
 - **Matplotlib** and **Seaborn**: For exploratory data analysis and visualization (if applicable).
+- **LIME**: Explain the prediction result.
 
 ## Model
-The predictive model is trained using the German Credit Risk dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The Logistic Regression model is used.
+The Logistic Regression model is trained using the German Credit Risk dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. 
 
 
 #### Thank you for using the Load Eligibility Application! Feel free to share your feedback.

@@ -4,6 +4,7 @@ from src.features.build_features import create_dummy
 from src.models.train_model import train_LRmodel
 from src.models.predict_model import evaluate_model
 import pandas as pd
+from src.visualization.visualize import plot_coefficients, plot_correlation_heatmap
 
 if __name__ == "__main__":
     # Load and preprocess the data
@@ -18,10 +19,12 @@ if __name__ == "__main__":
 
     # Evaluate the model   
     accuracy, confusion_mat = evaluate_model(lrmodel, x_test_scaled, y_test)
+
     if accuracy>0.76:
         print("Successful! The Accuracy of modle is {accuracy} above 76%.")        
         print(f"Confusion Matrix:\n{confusion_mat}")
-        
+        plot_correlation_heatmap(x)
+        plot_coefficients(lrmodel, x)
     else:
         print("The model is not good enough.")
  

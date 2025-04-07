@@ -28,6 +28,10 @@ def train_LRmodel(x, y):
     # Save the trained model
     with open('models/LRmodel.pkl', 'wb') as f:
         pickle.dump(lrmodel, f)
+    
+    # Save the train data
+    with open('models/xtrain.pkl', 'wb') as f:
+        pickle.dump(x_train_scaled, f)
 
     return lrmodel, x_test_scaled, y_test
 
