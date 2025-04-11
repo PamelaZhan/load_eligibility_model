@@ -21,48 +21,48 @@ with open('models/scaler.pkl', 'rb') as f:
 
 # create explainer and plot the importance
 # not proper explaining logistic regression
-'''def plot_explainer(columns, input_data, lr_model):
-    # Load scaled train data
-    with open("models/xtrain.pkl", "rb") as file:
-        x_train = pickle.load(file)
+#def plot_explainer(columns, input_data, lr_model):
+#    # Load scaled train data
+#    with open("models/xtrain.pkl", "rb") as file:
+#       x_train = pickle.load(file)
 
-    # create explainer object
-    LIMEexplainer = lime_tabular.LimeTabularExplainer(
-            training_data=x_train,
-            class_names=["Not_Eligible", "Eligible"],
-            feature_names=columns,
-            mode='classification'
-    )
+#    # create explainer object
+#    LIMEexplainer = lime_tabular.LimeTabularExplainer(
+#            training_data=x_train,
+#            class_names=["Not_Eligible", "Eligible"],
+#            feature_names=columns,
+#            mode='classification'
+#    )
 
-    # Generate explanation instance
-    exp = LIMEexplainer.explain_instance(
-        data_row=input_data[0],                 
-        predict_fn=lr_model.predict_proba,           # Model's prediction function
-        num_features=20                      # Number of features to include in explanation
-    )    
+#    # Generate explanation instance
+#    exp = LIMEexplainer.explain_instance(
+#        data_row=input_data[0],                 
+#        predict_fn=lr_model.predict_proba,           # Model's prediction function
+#        num_features=20                      # Number of features to include in explanation
+#    )    
 
-    # Convert explanation to a matplotlib figure
-    fig = exp.as_pyplot_figure()  
+#    # Convert explanation to a matplotlib figure
+#    fig = exp.as_pyplot_figure()  
 
-    # Get feature importance values from the explanation
-    importances = [x[1] for x in exp.as_list()]  
-    # reverse the order for plot
-    importances.reverse()
+#    # Get feature importance values from the explanation
+#    importances = [x[1] for x in exp.as_list()]  
+#    # reverse the order for plot
+#    importances.reverse()
 
-    # Annotate each bar with its corresponding importance value
-    for i, importance in enumerate(importances, start=0):
-        plt.text(
-            importance,  # x-coordinate of the bar (importance value)
-            i,  # y-coordinate (corresponding bar)
-            f'{importance:.4f}',  # Display importance value 
-            ha='center',  # Align text horizontally 
-            va='center',  # Align text vertically 
-            fontsize=10,  # Font size for the annotation
-            color='black'  # Text color
-        )
-    # return the plot
-    return fig, exp.as_list() 
-'''
+#    # Annotate each bar with its corresponding importance value
+#    for i, importance in enumerate(importances, start=0):
+#        plt.text(
+#            importance,  # x-coordinate of the bar (importance value)
+#            i,  # y-coordinate (corresponding bar)
+#            f'{importance:.4f}',  # Display importance value 
+#            ha='center',  # Align text horizontally 
+#            va='center',  # Align text vertically 
+#            fontsize=10,  # Font size for the annotation
+#            color='black'  # Text color
+#        )
+#    # return the plot
+#    return fig, exp.as_list() 
+
 # Prepare the form to collect user inputs
 with st.form("user_inputs"):
     st.subheader("Loan Applicant Details")
