@@ -20,7 +20,8 @@ with open('models/scaler.pkl', 'rb') as f:
     scaler=pickle.load(f)
 
 # create explainer and plot the importance
-def plot_explainer(columns, input_data, lr_model):
+# not proper explaining logistic regression
+'''def plot_explainer(columns, input_data, lr_model):
     # Load scaled train data
     with open("models/xtrain.pkl", "rb") as file:
         x_train = pickle.load(file)
@@ -61,7 +62,7 @@ def plot_explainer(columns, input_data, lr_model):
         )
     # return the plot
     return fig, exp.as_list() 
-
+'''
 # Prepare the form to collect user inputs
 with st.form("user_inputs"):
     st.subheader("Loan Applicant Details")
@@ -178,12 +179,12 @@ if submitted:
         st.write("Sorry, you are not eligible for the loan.")
 
     # call the function to get explaination plot and importance values
-    fig, exp=plot_explainer(features, input_scaled, lr_model)
+    #fig, exp=plot_explainer(features, input_scaled, lr_model)
     # Display explanation in Streamlit
-    st.subheader("LIME Explanation for Prediction")
-    st.pyplot(fig)
-    st.subheader("Feature Contributions:")
-    st.table(pd.DataFrame(exp, columns=["Feature", "Importance"]))
+    #st.subheader("LIME Explanation for Prediction")
+    #st.pyplot(fig)
+    #st.subheader("Feature Contributions:")
+    #st.table(pd.DataFrame(exp, columns=["Feature", "Importance"]))
 
 # display Coefficient image and values
 st.subheader("Feature Coefficient")
